@@ -1,11 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cocktail Catalog | JavaScript Asíncrono</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./js/api.js" defer></script>
+    <script src="./js/storage.js" defer></script>
+    <script src="./js/app.js" defer></script>
 </head>
 <body>
-    <p>Empezamos</p>
+    <div class="app-shell">
+        <header class="app-header">
+            <div class="brand" aria-label="Cocktail Catalog">
+                <div class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" focusable="false">
+                        <path d="M13 10h22L24 24 13 10Z"></path>
+                        <path d="M24 24v12"></path>
+                        <path d="M17 38h14"></path>
+                        <path d="M18 16h12"></path>
+                    </svg>
+                </div>
+                <div>
+                    <h1>Cocktail Catalog</h1>
+                    <p>TheCocktailDB · JavaScript asíncrono</p>
+                </div>
+            </div>
+
+            <button class="button button-primary button-icon-only" id="randomButton" type="button" title="Aleatorio" aria-label="Cargar cóctel aleatorio">
+                <svg class="action-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M20 11a8 8 0 0 0-14.2-5"></path>
+                    <path d="M4 5.5V10h4.5"></path>
+                    <path d="M4 13a8 8 0 0 0 14.2 5"></path>
+                    <path d="M20 18.5V14h-4.5"></path>
+                    <path d="M9 12h.01"></path>
+                    <path d="M12 9h.01"></path>
+                    <path d="M15 12h.01"></path>
+                    <path d="M12 15h.01"></path>
+                </svg>
+            </button>
+        </header>
+
+        <main class="catalog-layout">
+            <section class="recipe-stage" aria-labelledby="recipeTitle">
+                <div class="section-header">
+                    <div>
+                        <p class="section-kicker">Receta activa</p>
+                        <h2 id="recipeTitle">Detalle del cóctel</h2>
+                    </div>
+                </div>
+
+                <div class="status-region" id="statusRegion" aria-live="polite"></div>
+                <article class="recipe-card" id="recipeCard" aria-live="polite"></article>
+            </section>
+
+            <aside class="favorites-card" aria-labelledby="favoritesTitle">
+                <div class="favorites-header">
+                    <div>
+                        <p class="section-kicker">Lista guardada</p>
+                        <h2 id="favoritesTitle">Mis Favoritos</h2>
+                    </div>
+                    <span class="counter" id="favoriteCounter">0</span>
+                </div>
+
+                <div class="favorites-list" id="favoritesList" aria-live="polite"></div>
+            </aside>
+        </main>
+
+        <footer class="footer">
+            <span>Junior Perez Davila - 407721</span>
+            <span>Claudia Libertad Quisper Terrones - 407719</span>
+            <span>Samuel Andres Zona Malaver - 385387</span>
+            <span>Datos servidos por TheCocktailDB.</span>
+            <a href="https://www.thecocktaildb.com/" target="_blank" rel="noopener noreferrer">Ver API pública</a>
+        </footer>
+    </div>
 </body>
 </html>
